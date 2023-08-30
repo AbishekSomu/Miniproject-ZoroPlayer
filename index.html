@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" href="logincss.css">
+    <title>Login Form</title>
+    <script>
+        function checkLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            var validUsername = "717822p202";
+            var validPassword = "cse02";
+
+            if (username === validUsername && password === validPassword) {
+                window.location.href = "mini.html"; // Redirect to main page
+            } else {
+                alert("Login failed. Please check your username and password.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login Form</h2>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" class="login-input" id="username" name="username" required placeholder="Username"><br><br>
+    
+            <label for="password">Password:</label>
+            <input type="password" class="login-input" id="password" name="password" placeholder="Password" required><br><br>
+            <input class="login-button" type="button" id="login-button" value="Login" onclick="checkLogin()">
+            <input type="checkbox">Remember login info <div class="tab1"></div><a href="">Forgot password</a><br>
+            <div class="tab2"></div> <a href="">register</a>
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+

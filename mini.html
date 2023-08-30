@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="minicss.css">
+    <title>ZORO player</title>
+</head>
+<body>
+    <audio id="audioPlayer" controls>
+        <source id="audioSource" src="sunflower.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <button id="nextButton">Next Song</button>
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+        const audioSource = document.getElementById('audioSource');
+        const nextButton = document.getElementById('nextButton');
+        const songs = [
+            'smack that.mp3',
+            'let me love you.mp3',
+            'dusk till dawn.mp3'
+        ];
+        let currentSongIndex = 0;
+        function playNextSong() {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            audioSource.src = songs[currentSongIndex];
+            audioPlayer.load();
+            audioPlayer.play();
+        }      
+        nextButton.addEventListener('click', playNextSong);
+    </script>
+</body>
+</html>
